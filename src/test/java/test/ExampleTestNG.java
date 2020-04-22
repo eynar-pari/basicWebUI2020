@@ -26,8 +26,10 @@ public class ExampleTestNG {
     }
 
     @Test
-    public void testSeleniumTestNG() {
+    public void testSeleniumTestNG() throws InterruptedException {
         driver.get("https://www.google.com/");
+        Thread.sleep(2000);
+
     }
 
     @AfterMethod

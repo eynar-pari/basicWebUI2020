@@ -14,4 +14,10 @@ public class TestBase {
     public void after(){
         DriverManager.getInstance().closeBrowser();
     }
+
+
+    public void waitTime(int seconds) throws InterruptedException {
+        Thread.sleep(1000 *seconds);
+
+    }
 }

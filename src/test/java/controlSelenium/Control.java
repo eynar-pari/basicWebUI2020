@@ -2,6 +2,9 @@ package controlSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import sessionManager.DriverManager;
 
 public class Control {
@@ -14,6 +17,11 @@ public class Control {
     }
 
     public void find(){
+        // Explicit Wait
+
+        //WebDriverWait wait = new WebDriverWait(DriverManager.getInstance().getBrowser(),5);
+        //wait.until(ExpectedConditions.elementToBeClickable(this.locator));
+
         myControl= DriverManager.getInstance().getBrowser().findElement(this.locator);
     }
 
@@ -26,6 +34,7 @@ public class Control {
 
     public void type(String value){
         this.find();
+        myControl.clear();
         myControl.sendKeys(value);
     }
 
@@ -48,5 +57,11 @@ public class Control {
         }
 
     }
+
+    public void doubleClick(){
+        Actions actions= new Actions(DriverManager.getInstance().getBrowser());
+        actions.doubleClick();
+    }
+
 
 }

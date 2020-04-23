@@ -18,7 +18,7 @@ public class Chrome implements IBrowser{
         ChromeOptions options = new ChromeOptions();
         WebDriver driver = new ChromeDriver(options);
 
-        // wait
+        // implicit wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         return driver;

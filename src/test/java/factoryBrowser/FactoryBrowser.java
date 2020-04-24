@@ -15,6 +15,9 @@ public class FactoryBrowser {
             case "internetexplorer":
                 browser=new IE();
                 break;
+            case "browserstack":
+                browser= new BrowserStack();
+                break;
             default:
                 browser= new Chrome();
                 break;

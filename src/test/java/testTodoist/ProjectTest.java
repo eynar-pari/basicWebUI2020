@@ -12,7 +12,7 @@ public class ProjectTest extends TestBase{
     LeftMenuPage leftMenuPage= new LeftMenuPage();
     NewProjectModal newProjectModal= new NewProjectModal();
     UpdateProjectModal updateProjectModal = new UpdateProjectModal();
-
+    AlertDelete alertDelete = new AlertDelete();
     @Test
     public void verifyCRUDProject() throws InterruptedException {
 
@@ -34,6 +34,7 @@ public class ProjectTest extends TestBase{
         this.waitTime(3);
         Assert.assertTrue("ERROR! no fue creado",leftMenuPage.isDisplayedProject(nameProject));
 
+        leftMenuPage = new LeftMenuPage();
         leftMenuPage.selectProject(nameProject);
         leftMenuPage.clickMenuOptionProject(nameProject);
         this.waitTime(2);
@@ -53,7 +54,7 @@ public class ProjectTest extends TestBase{
         this.waitTime(2);
         leftMenuPage.deleteButton.click();
         this.waitTime(2);
-        DriverManager.getInstance().getBrowser().switchTo().alert().accept();
+        alertDelete.deleteButton.click();
         // verificacion...
         this.waitTime(2);
         Assert.assertFalse("ERROR! no fue borrado",leftMenuPage.isDisplayedProject(nameProjectUpdate));

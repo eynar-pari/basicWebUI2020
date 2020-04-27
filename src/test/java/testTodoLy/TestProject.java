@@ -43,6 +43,7 @@ public class TestProject extends TestBase {
          leftMenuPage.saveButton.click();
 
          this.waitTime(2);
+
          Assert.assertTrue("ERROR ! El proyecto no fue actualizado",leftMenuPage.isDisplayedProject(nameProjectUpdated));
 
          //Delete

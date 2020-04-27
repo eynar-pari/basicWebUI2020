@@ -10,7 +10,7 @@ public class DriverManager {
 
 
     private DriverManager(){
-        browser= FactoryBrowser.make("browserstack").create();
+        browser= FactoryBrowser.make("chrome").create();
     }
 
     public static DriverManager getInstance(){

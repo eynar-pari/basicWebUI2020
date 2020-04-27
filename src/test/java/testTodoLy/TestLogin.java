@@ -18,11 +18,9 @@ public class TestLogin extends TestBase {
 
      @Test
     public void testLoginIsWorking(){
-
         // Accion / Donde se hace la acciones (Objeto) / Donde esta el objeto
 
         mainPage.loginImage.click();
-
         loginPage.emailTextBox.type("eynar.pari@gmail.com");
         loginPage.passwordTextBox.type("Control123!");
         loginPage.loginButton.click();
